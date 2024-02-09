@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-09 17:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/settings.py:92
+msgid "Spanish"
+msgstr ""
+
+#: core/settings.py:93
+msgid "English"
+msgstr ""
+
+#: core/templates/base.html:7 core/templates/base.html:47
+msgid "ProjectTitle"
+msgstr "Encarnación de Díaz: Fotohistorias de la Cristiada"
+
+#: core/templates/base.html:60
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: core/templates/base.html:66
+msgid "Photographs"
+msgstr "Fotografías"
+
+#: core/templates/base.html:72
+msgid "About"
+msgstr "Acerca de"
+
+#: core/templates/base.html:78
+msgid "Updates"
+msgstr "Actualizaciones"
+
+#: core/templates/base.html:84
+msgid "Get Involved"
+msgstr "Involucrarse"
+
+#: core/templates/base.html:106
+msgid "Privacy"
+msgstr "Privacidad"
+
+#: core/templates/base.html:107
+msgid "Legal"
+msgstr "Legal"
+
+#: core/templates/base.html:108
+msgid "Freedom of Information"
+msgstr "Libertad de Información"
+
+#: core/templates/base.html:109
+msgid "Cookies"
+msgstr "Cookies"
+
+#: core/templates/base.html:110
+msgid "Accessibility"
+msgstr "Accesibilidad"

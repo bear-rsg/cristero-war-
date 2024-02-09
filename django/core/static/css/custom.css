@@ -1,0 +1,516 @@
+
+/* ---------- General ---------- */
+
+html, body {
+    font-family: 'Inter', 'Helvetica', sans-serif;
+    background: #101010;
+    color: #EEE;
+    margin: 0;
+    font-weight: 300;
+
+    /* Variables */
+    --color-primary: #f36112;
+    --color-primary-dark: #b03f02;
+    --color-primary-light: #ff975f;
+    --color-red: #c23616;
+    --color-green: #27ae60;
+    --color-purple: #8e44ad;
+}
+
+.display-small,
+.display-large {
+    display: none;
+}
+
+a,
+.link:not(.brokenlink) {
+    color: var(--color-primary);
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+a:hover,
+.link:not(.brokenlink):hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+    display: inline-block;
+    vertical-align: middle;
+    color: white;
+    font-size: 1.3em;
+}
+
+h2 {
+    font-size: 2.3em;
+    margin: 1.5em 0 0.8em 0;
+    line-height: 1em;
+    font-weight: 700;
+    color: black;
+    padding: 0.1em 0;
+    border-bottom: 0.2em solid var(--color-primary);
+    width: fit-content;
+}
+
+h3 {
+    font-size: 1.8em;
+    line-height: 1em;
+    font-weight: 600;
+    margin: 1.5em 0 0.5em 0;
+    color: black;
+    padding: 0.1em 0;
+    border-bottom: 0.2em solid var(--color-primary);
+    width: fit-content;
+}
+
+h4 {
+    font-weight: 600;
+    line-height: 1em;
+    font-size: 1.4em;
+    padding: 1em 0 0.2em 0;
+}
+
+hr {
+    border-top: 0.4rem solid #121d29;
+    width: 9rem;
+    margin: 0.2em 0 1.3em 0;
+}
+
+dl {
+    display: block;
+    margin: 0.5em 0;
+}
+
+dt {
+    display: inline-block;
+    font-weight: bold;
+}
+
+dt::after {
+    content: ': ';
+}
+
+dd {
+    display: inline-block;
+    margin-left: 0.3em;
+}
+
+table {
+    text-overflow: auto;
+    width: 100%;
+}
+
+td {
+    padding: 0.2em;
+}
+
+p {
+    margin: 0.5em 0;
+    line-height: 1.7em;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    padding: 0.3em 1.3em 0.3em 0.3em;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    display: block;
+    border: 1px solid #BBB;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    background-color: white;
+}
+
+select option {
+    color: black;
+}
+
+strong {
+    font-weight: 500;
+}
+
+em {
+    font-style: italic;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+i.icon {
+    margin-right: 0.3em;
+    user-select: none;
+}
+
+.image-circle {
+    border-radius: 100%;
+    width: 13em;
+    max-width: 90%;
+    display: block;
+    margin: 1em auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 0;
+    height: 0;
+    margin: 7em auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pdf-viewer-full {
+    width: 95%;
+    height: calc(100vh - 4em);
+    display: block;
+    margin: 1em auto;
+    overflow: auto;
+}
+
+.pdf-viewer-download {
+    clear: both;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    display: block;
+    width: fit-content;
+    margin: 1em auto 2em auto;
+}
+
+.pdf-viewer-download:hover {
+    color: white;
+}
+
+.rtl {
+    text-align: right;
+}
+
+/* ---------- Forms ---------- */
+
+form.full-form p {
+    margin: 1em 0 2em 0;
+}
+
+form.full-form label,
+form.full-form textarea,
+form.full-form input[type=text],
+form.full-form input[type=url],
+form.full-form input[type=email],
+form.full-form input[type=password],
+form.full-form input[type=number] {
+    display: block;
+    width: 100%;
+}
+
+form.full-form textarea {
+    height: 4em;
+}
+
+form.full-form label {
+    margin-bottom: 0;
+}
+
+form.full-form ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+form.full-form .helptext {
+    color: #505050;
+    font-size: 0.85em;
+    font-style: italic;
+    margin: 0.2em;
+    display: block;
+}
+
+form.full-form .errorlist {
+    color: var(--color-red);
+}
+
+button {
+    border-radius: 0.4em;
+}
+
+form.full-form button[type=submit] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    padding: 0.7em;
+    margin: 1em auto;
+    background: var(--color-primary);
+    color: white;
+    width: 100%;
+}
+
+form.full-form button[type=submit]:hover {
+    opacity: 0.9;
+}
+
+.full-form-footer-links a {
+    display: block;
+    padding: 0.5em;
+    margin: 2em auto;
+    text-align: center;
+    background: #DDD;
+    border-radius: 0.4em;
+    color: #404040;
+}
+
+.full-form-footer-links a:hover {
+    opacity: 0.85;
+}
+
+form.full-form button[type=submit].button-danger {
+    background: var(--color-red);
+}
+
+.field-required.field-invalid {
+    border: 2px solid var(--color-red);
+}
+
+.validationmsg {
+    color: var(--color-red);
+    font-size: 0.9em;
+}
+
+/* ---------- Navigation ---------- */
+
+nav.navbar {
+    background: #101010;
+    color: white;
+    vertical-align: middle;
+    z-index: 950;
+    font-weight: 700;
+}
+
+.navbar-brand {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.navbar-brand.hidden {
+    visibility: hidden;
+    width: 0;
+}
+
+.nav-link {
+    font-size: 1.05rem;
+    color: white;
+    padding: 0.3em;
+    opacity: 0.8;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link.nav-link-persian {
+    font-size: 1.5em;
+    padding-top: 0.1em;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    opacity: 1;
+}
+
+.dropdown-menu {
+    background: white;
+    font-size: 1.09em;
+}
+
+.dropdown-item {
+    font-weight: 700;
+    padding: 0.5em 1em;
+    background: white;
+    color: var(--color-primary);
+}
+
+.dropdown-item:hover,
+.dropdown-item:active {
+    background: white;
+    color: var(--color-primary);
+}
+
+nav a:hover {
+    color: white;
+}
+
+#nav-search {
+    border-radius: 2em;
+    border: 4px solid white;
+    padding: 0 0.8em;
+}
+
+#nav-search input {
+    background: none;
+    border: none;
+    padding: 0.3em;
+    margin-left: 0.5em;
+    color: white;
+    width: 13em;
+    font-weight: bold;
+    transition: width 0.4s ease;
+}
+
+#nav-search input::placeholder {
+    color: white;
+    opacity: 0.5;
+}
+
+#nav-search input:focus {
+    outline: none;
+}
+
+/* ---------- Main ---------- */
+
+main {
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 5em;
+}
+
+main section {
+    padding: 0.5rem 0;
+}
+
+/* ---------- Welcome ---------- */
+
+#welcome-banner {
+    color: white;
+    background-color: var(--color-primary);
+    background-size: 2em 2em;
+    background-image: url('../images/welcome-banner-bg.jpg');
+    position: relative;
+}
+
+#welcome-banner-content {
+    color: white;
+    font-weight: 700;
+    width: fit-content;
+}
+
+#welcome-banner-content-title {
+    line-height: 1em;
+}
+
+#welcome-banner-content-links {
+    margin-top: 5em;
+}
+
+#welcome-banner-content-links a {
+    border-radius: 2em;
+    background-color: white;
+    color: var(--color-primary);
+    padding: 0.6em 1.3em;
+    width: fit-content;
+    font-size: 1.45em;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+}
+
+#welcome-banner-content-links a:hover {
+    text-decoration: none;
+    opacity: 0.95;
+}
+
+#welcome-banner-content hr {
+    border-top: 1rem solid white;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+#welcome-banner-proceed {
+    font-size: 3em;
+    position: absolute;
+    bottom: 0.8em;
+    left: calc(50% - 40px);
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    color: white;
+    padding-top: 0.1em;
+    cursor: pointer;
+    line-height: 80px;
+}
+
+#welcome-banner-proceed:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: #171717;
+    color: #EEE;
+    padding: 4em 0;
+    margin-top: 5em;
+    text-align: center;
+}
+
+#footer-content-logos img {
+    height: 4em;
+    margin: 1em;
+}
+
+#footer-content-text {
+    margin-top: 2em;
+}
+
+footer p {
+    margin-top: 2em;
+    display: block;
+}
+
+footer a {
+    color: var(--color-primary);
+    opacity: 1;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--color-primary);
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ---------- Error Pages ---------- */
+
+.errorpage-path {
+    font-weight: 500;
+}
+
+.errorpage-code {
+    margin-top: 3em;
+    font-size: 0.8em;
+}
