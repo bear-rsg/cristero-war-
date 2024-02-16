@@ -42,7 +42,6 @@ h1 {
     line-height: 1.2em;
     display: inline-block;
     vertical-align: middle;
-    color: white;
     font-size: 1.3em;
 }
 
@@ -51,7 +50,6 @@ h2 {
     margin: 1.5em 0 0.8em 0;
     line-height: 1em;
     font-weight: 700;
-    color: black;
     padding: 0.1em 0;
     border-bottom: 0.2em solid var(--color-primary);
     width: fit-content;
@@ -62,7 +60,6 @@ h3 {
     line-height: 1em;
     font-weight: 600;
     margin: 1.5em 0 0.5em 0;
-    color: black;
     padding: 0.1em 0;
     border-bottom: 0.2em solid var(--color-primary);
     width: fit-content;
