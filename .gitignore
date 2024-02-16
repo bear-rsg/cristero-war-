@@ -6,6 +6,7 @@ venv/
 django/media/
 django/static/
 node_modules/
+django/general/migrations/
 private/
 private_testdata*
 
