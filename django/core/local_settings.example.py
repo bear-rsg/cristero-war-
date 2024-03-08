@@ -17,8 +17,7 @@ SECRET_KEY = ''
 DEBUG = True/False
 
 # Used by Django Debug Toolbar (comment out to disable DDT)
-if DEBUG:
-    INTERNAL_IPS = ["127.0.0.1"]
+INTERNAL_IPS = ["127.0.0.1"] if DEBUG else []
 
 # Set to ['*'] if in development, or specific IP addresses and domains if in production
 ALLOWED_HOSTS = ['*']/['cristero-war.bham.ac.uk']
