@@ -18,12 +18,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    # 3rd Party
+    'debug_toolbar',
+    'ckeditor',
+    'ckeditor_uploader',
     # Custom apps
     'account',
     'general',
+    'pages'
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -115,6 +121,79 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/latest/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# CKEditor
+# Image File uploads via CKEditor
+CKEDITOR_UPLOAD_PATH = 'cke_uploads/'  # will be based within MEDIA dir
+CKEDITOR_ALLOW_NONIMAGE_FILES = False  # only allow images to be uploaded
+CKEDITOR_IMAGE_BACKEND = 'ckeditor_uploader.backends.PillowBackend'
+CKEDITOR_THUMBNAIL_SIZE = (100, 100)
+CKEDITOR_FORCE_JPEG_COMPRESSION = True
+CKEDITOR_IMAGE_QUALITY = 90
+SILENCED_SYSTEM_CHECKS = ["ckeditor.W001"]
+# Configuration
+# For full list of configurations, see: https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
+# For full list of toolbar buttons, see: https://ckeditor.com/latest/samples/toolbarconfigurator/index.html#advanced
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            {
+                'name': 'views',
+                'items': ['Maximize', 'Source']
+            },
+            {
+                'name': 'styles',
+                'items': ['Format', '-', 'TextColor', 'BGColor', 'Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript', '-', 'RemoveFormat']
+            },
+            {
+                'name': 'clipboard',
+                'items': ['Cut', 'Copy', '-', 'Undo', 'Redo']
+            },
+            {
+                'name': 'paragraph',
+                'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl']
+            },
+            {
+                'name': 'links',
+                'items': ['Link', 'Unlink', 'Anchor']
+            },
+            {
+                'name': 'insert',
+                'items': ['Image', 'Table', 'HorizontalRule', 'SpecialChar']
+            },
+            {
+                'name': 'editing',
+                'items': ['Find', '-', 'Scayt']
+            },
+        ],
+        'format_tags': 'h2;h3;h4;h5;p',
+        'tabSpaces': 4,
+        'height': '80vh',
+        'width': '100%',
+        'allowedContent': True,
+        'entities_greek': False,
+        'entities_latin': False,
+        'scayt_autoStartup': True,
+        'scayt_sLang': 'en_GB',
+        'uiColor': '#FFFFFF',
+        'language': 'en',
+        'defaultLanguage': 'en',
+        'editorplaceholder': 'Create the content of this page...',
+        'removePlugins': ','.join([
+            'language',
+            'elementspath',
+        ]),
+        'versionCheck': False,
+        'contentsCss': [
+            '/static/css/reset.css',
+            '/static/css/custom.css',
+            '/static/css/custom_small.css',
+            '/static/css/custom_large.css',
+            '/static/css/custom_ckeditor.css',
+        ],
+    }
+}
 
 
 # Import local_settings.py

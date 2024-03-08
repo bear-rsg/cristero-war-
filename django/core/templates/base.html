@@ -1,4 +1,5 @@
 {% load static settings_value i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +44,7 @@
         <!-- Navigation bar -->
         <nav class="navbar fixed-top navbar-expand-lg">
 
-            <a class="navbar-brand{% if request.path == "/" or request.path == '/en/' %} xhidden{% endif %}" href="#">
+            <a class="navbar-brand{% if request.path == "/" or request.path == '/en/' %} xhidden{% endif %}" href="/{{ LANGUAGE_CODE }}/">
                 <h1>{% translate 'ProjectTitle' %}</h1>
             </a>
 
@@ -56,31 +57,31 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Welcome -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/" or request.path == '/en/' %} active{% endif %}" href="#">
+                        <a class="nav-link{% if request.path == "/{{ LANGUAGE_CODE }}/" %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/">
                             {% translate 'Welcome' %}
                         </a>
                     </li>
                     <!-- Photographs -->
                     <li class="nav-item">
-                        <a class="nav-link{% if "/photographs/" in request.path %} active{% endif %}" href="#">
+                        <a class="nav-link{% if "/{{ LANGUAGE_CODE }}/photographs/" in request.path %} active{% endif %}" href="#">
                             {% translate 'Photographs' %}
                         </a>
                     </li>
                     <!-- About -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/about/" %} active{% endif %}" href="#">
+                        <a class="nav-link{% if request.path == "/{{ LANGUAGE_CODE }}/about/" %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/about/">
                             {% translate 'About' %}
                         </a>
                     </li>
                     <!-- Updates -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/projectupdates/" %} active{% endif %}" href="#">
+                        <a class="nav-link{% if request.path == "/{{ LANGUAGE_CODE }}/updates/" %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/updates/">
                             {% translate 'Updates' %}
                         </a>
                     </li>
                     <!-- Get Involved -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/getinvolved/" %} active{% endif %}" href="#">
+                        <a class="nav-link{% if request.path == "/{{ LANGUAGE_CODE }}/get-involved/" %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/get-involved/">
                             {% translate 'Get Involved' %}
                         </a>
                     </li>
@@ -108,7 +109,7 @@
                     <a href="https://www.birmingham.ac.uk/university/governance/policies-regs/information/index.aspx" target="_blank">{% translate 'Freedom of Information' %}</a> |
                     <a href="{% url 'general:cookies' %}">{% translate 'Cookies' %}</a> |
                     <a href="https://accessibility.bear.bham.ac.uk/statements-cal.html" target="_blank">{% translate 'Accessibility' %}</a>
-                </p>	
+                </p>
                 <p>
                     © University of Birmingham {% now "Y" %}
                 </p>
