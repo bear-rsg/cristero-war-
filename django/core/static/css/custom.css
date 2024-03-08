@@ -2,19 +2,20 @@
 /* ---------- General ---------- */
 
 html, body {
-    font-family: 'Inter', 'Helvetica', sans-serif;
-    background: #101010;
-    color: #EEE;
-    margin: 0;
-    font-weight: 300;
-
-    /* Variables */
+    /* Color Variables */
     --color-primary: #f36112;
     --color-primary-dark: #b03f02;
     --color-primary-light: #ff975f;
+    --color-black: #101010;
     --color-red: #c23616;
     --color-green: #27ae60;
     --color-purple: #8e44ad;
+
+    font-family: 'Inter', 'Helvetica', sans-serif;
+    background: var(--color-black);
+    color: #EEE;
+    margin: 0;
+    font-weight: 300;
 }
 
 .display-small,
@@ -402,7 +403,7 @@ main section {
 
 #welcome-banner {
     color: white;
-    background-color: var(--color-primary);
+    background-color: var(--color-black);
     background-size: 2em 2em;
     background-image: url('../images/welcome-banner-bg.jpg');
     position: relative;
@@ -414,7 +415,9 @@ main section {
     width: fit-content;
 }
 
-#welcome-banner-content-title {
+#welcome-banner-content-title,
+#welcome-banner-content-tagline {
+    background: var(--color-black);
     line-height: 1em;
 }
 
@@ -424,7 +427,7 @@ main section {
 
 #welcome-banner-content-links a {
     border-radius: 2em;
-    background-color: white;
+    background-color: var(--color-black);
     color: var(--color-primary);
     padding: 0.6em 1.3em;
     width: fit-content;
