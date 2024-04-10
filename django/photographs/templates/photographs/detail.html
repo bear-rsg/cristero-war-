@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block main %}
+
+<!-- Photograph -->
+<div id="photograph-detail" class="container">
+    <h2>{{ photograph }}</h2>
+    <div id="photograph-detail-description">
+        {% if LANGUAGE_CODE == 'es' %}
+            {{ photograph.description_es | safe }}
+        {% elif LANGUAGE_CODE == 'en' %}
+            {{ photograph.description_en | safe }}
+        {% endif %}
+    </div>
+    <div id="photograph-detail-image">
+        <a href="{{ photograph.image.url }}" target="_blank">
+            <img src="{{ photograph.image.url }}" alt="A photograph from the Cristero War" title="Click image to open in full screen">
+        </a>
+    </div>
+</div>
+
+{% endblock %}

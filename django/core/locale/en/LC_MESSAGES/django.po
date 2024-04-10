@@ -28,7 +28,7 @@ msgstr ""
 
 #: core/templates/base.html:7 core/templates/base.html:47
 msgid "ProjectTitle"
-msgstr "Encarnación de Díaz: Photohistories of the Cristero War"
+msgstr "Encarnación de Díaz"
 
 #: core/templates/base.html:60
 msgid "Welcome"

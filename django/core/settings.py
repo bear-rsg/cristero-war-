@@ -19,13 +19,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     # 3rd Party
+    # captchanotimeout is a custom app to override "captcha" to prevent 2 minute timeouts
+    # See: https://github.com/praekelt/django-recaptcha/issues/183
+    'captchanotimeout',
+    'django_recaptcha',
     'debug_toolbar',
     'ckeditor',
     'ckeditor_uploader',
     # Custom apps
     'account',
     'general',
-    'pages'
+    'pages',
+    'photographs'
 ]
 
 MIDDLEWARE = [
@@ -56,6 +61,7 @@ TEMPLATES = [
             ],
             'libraries': {
                 'settings_value': 'core.templatetags.settings_value',
+                'language_url': 'core.templatetags.language_url',
             }
         },
     },
@@ -167,9 +173,9 @@ CKEDITOR_CONFIGS = {
                 'items': ['Find', '-', 'Scayt']
             },
         ],
-        'format_tags': 'h2;h3;h4;h5;p',
+        'format_tags': 'h2;h3;p',
         'tabSpaces': 4,
-        'height': '80vh',
+        'height': '40vh',
         'width': '100%',
         'allowedContent': True,
         'entities_greek': False,

@@ -5,14 +5,15 @@
 <section id="welcome-banner">
     <div id="welcome-banner-content">
         <div id="welcome-banner-content-title">
-            (title)
+            Encarnación de Díaz
         </div>
         <hr>
         <div id="welcome-banner-content-tagline">
-            (tagline)
-        </div>
-        <div id="welcome-banner-content-links">
-            <a href="#">Browse Photographs</a>
+            {% if LANGUAGE_CODE == 'es' %}
+                Fotohistorias de la Cristiada
+            {% elif LANGUAGE_CODE == 'en' %}
+                Photohistories of the Cristero War
+            {% endif %}
         </div>
     </div>
 

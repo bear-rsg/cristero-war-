@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+
+<!-- Photograph -->
+<div id="photograph-list" class="container">
+    <h2>Photographs</h2>
+
+    <!-- Search -->
+    <form method="GET" class="form-group row" id="photograph-list-search-form">
+        <div class="col-12">
+            <div class="input-group">
+                <!-- Search textbox -->
+                <input type="text" class="form-control" name="search" title="Search" id="photograph-list-search-input" placeholder="Search">
+                <!-- Search button -->
+                <div class="input-group-append">
+                    <button type="submit" value="Search" class="btn" title="search-btn" id="photograph-list-search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- List Items -->
+    <div id="photograph-list-items">
+        {% for photograph in photograph_list %}
+            <a href="{% url 'photographs:detail' photograph.id %}" class="photograph-list-items-item" style="background-image: url({{ photograph.image.url }});">
+                <div class="photograph-list-items-item-text">
+                    {{ photograph }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

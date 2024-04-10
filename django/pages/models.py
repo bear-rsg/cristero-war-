@@ -43,28 +43,6 @@ class Page(models.Model):
     meta_firstpublished_datetime = models.DateTimeField(blank=True, null=True, verbose_name="first published")
 
     @property
-    def other_pages_that_link_to_this_page(self):
-        """
-        Return a filtered queryset of Page objects that have an anchor tag to this Page
-        """
-        return Page.objects.filter(
-            Q(content_es__icontains=f'href="/{self.meta_slug}"')
-            |
-            Q(content_en__icontains=f'href="/{self.meta_slug}"')
-        ).exclude(id=self.id)
-
-    @property
-    def list_of_other_pages_that_link_to_this_page(self):
-        """
-        Returns HTML that shows list of anchor tags for each Page that links to this Page
-        """
-        links = []
-        for page in self.other_pages_that_link_to_this_page:
-            links.append(f'<a href="{page.admin_url}">{page.meta_slug}</a>')
-        if len(links):
-            return mark_safe('<br>'.join(links))
-
-    @property
     def admin_url(self):
         return reverse('admin:pages_page_change', args=[self.id])
 
