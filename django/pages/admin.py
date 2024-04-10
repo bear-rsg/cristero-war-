@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.db.models import ManyToManyField, ForeignKey
-from django.utils.text import slugify
 from django.utils import timezone
 from . import models
 
@@ -122,7 +121,7 @@ class PageAdminView(GenericAdminView):
                        'meta_created_datetime',
                        'meta_lastupdated_by',
                        'meta_lastupdated_datetime',
-                       'meta_firstpublished_datetime', 'list_of_other_pages_that_link_to_this_page')
+                       'meta_firstpublished_datetime')
     actions = (publish, unpublish)
     list_per_page = 200
 
@@ -137,17 +136,6 @@ class PageAdminView(GenericAdminView):
         # Meta: first published datetime
         if obj.published and obj.meta_firstpublished_datetime is None:
             obj.meta_firstpublished_datetime = timezone.now()
-
-        # If slug has changed (will know by change in name) then update
-        # links in content field of other Pages that point to this Page
-        if 'name' in form.changed_data:
-            new_meta_slug = slugify(obj.name)
-            for page in obj.other_pages_that_link_to_this_page:
-                # Spanish content
-                page.content_es = page.content_es.replace(f'href="/{obj.meta_slug}"', f'href="/{new_meta_slug}"')
-                # English content
-                page.content_en = page.content_en.replace(f'href="/{obj.meta_slug}"', f'href="/{new_meta_slug}"')
-                page.save()
 
         obj.save()
 

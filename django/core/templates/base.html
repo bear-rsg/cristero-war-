@@ -1,8 +1,8 @@
-{% load static settings_value i18n %}
+{% load static settings_value language_url i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 
     <head>
         <title>{% translate 'ProjectTitle' %}</title>
@@ -44,7 +44,7 @@
         <!-- Navigation bar -->
         <nav class="navbar fixed-top navbar-expand-lg">
 
-            <a class="navbar-brand{% if request.path == "/" or request.path == '/en/' %} xhidden{% endif %}" href="/{{ LANGUAGE_CODE }}/">
+            <a class="navbar-brand{% if request.path == "/" or request.path == '/es/' or request.path == '/en/' %} hidden{% endif %}" href="/{{ LANGUAGE_CODE }}/">
                 <h1>{% translate 'ProjectTitle' %}</h1>
             </a>
 
@@ -55,33 +55,27 @@
             <!-- Nav list -->
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
-                    <!-- Welcome -->
-                    <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/{{ LANGUAGE_CODE }}/" %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/">
-                            {% translate 'Welcome' %}
-                        </a>
-                    </li>
                     <!-- Photographs -->
                     <li class="nav-item">
-                        <a class="nav-link{% if "/{{ LANGUAGE_CODE }}/photographs/" in request.path %} active{% endif %}" href="#">
+                        <a class="nav-link{% if "/photographs/" in request.path %} active{% endif %}" href="{% url 'photographs:list' %}">
                             {% translate 'Photographs' %}
                         </a>
                     </li>
                     <!-- About -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/{{ LANGUAGE_CODE }}/about/" %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/about/">
+                        <a class="nav-link{% if "/about/" in request.path %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/about/">
                             {% translate 'About' %}
                         </a>
                     </li>
                     <!-- Updates -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/{{ LANGUAGE_CODE }}/updates/" %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/updates/">
+                        <a class="nav-link{% if "/updates/" in request.path %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/updates/">
                             {% translate 'Updates' %}
                         </a>
                     </li>
                     <!-- Get Involved -->
                     <li class="nav-item">
-                        <a class="nav-link{% if request.path == "/{{ LANGUAGE_CODE }}/get-involved/" %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/get-involved/">
+                        <a class="nav-link{% if "/get-involved/" in request.path %} active{% endif %}" href="/{{ LANGUAGE_CODE }}/get-involved/">
                             {% translate 'Get Involved' %}
                         </a>
                     </li>
@@ -116,17 +110,34 @@
             </div>
         </footer>
 
+        <!-- Language -->
+        <div id="language-show">
+            {% if LANGUAGE_CODE == 'es' %}🇪🇸{% elif LANGUAGE_CODE == 'en' %}🇬🇧{% endif%}
+        </div>
+        <div id="language-popup">
+            <ul id="lang-options" class="navbar-nav">
+                {% get_available_languages as languages %}
+                {% for lang_code, lang_name in languages %}
+                    <li>
+                        <a href="{% language_url lang_code request.get_full_path %}">
+                            {% if lang_code == 'es' %}🇪🇸{% elif lang_code == 'en' %}🇬🇧{% endif%}
+                            {{ lang_name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
         <!-- JavaScript (other JS references above, where appropriate. Remaining shown below.) -->
 
         <!-- 3rd party JavaScript -->
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <!-- Google Analytics tag (gtag.js) -->
-        <!-- TODO -->
 
         <!-- Custom JavaScript -->
         <script src="{% static 'js/cookiesmsg.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
 
     </body>
 

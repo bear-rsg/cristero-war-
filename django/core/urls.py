@@ -7,6 +7,8 @@ from django.conf import settings
 urlpatterns = i18n_patterns(
     # General app
     path('', include('general.urls')),
+    # Photograph app
+    path('photographs/', include('photographs.urls')),
     # CKEditor file uploads
     path('ckeditor/', include('ckeditor_uploader.urls')),
     # Django admin

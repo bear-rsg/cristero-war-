@@ -404,7 +404,8 @@ main section {
 #welcome-banner {
     color: white;
     background-color: var(--color-black);
-    background-size: 2em 2em;
+    background-size: cover;
+    background-position: center;
     background-image: url('../images/welcome-banner-bg.jpg');
     position: relative;
 }
@@ -413,39 +414,21 @@ main section {
     color: white;
     font-weight: 700;
     width: fit-content;
+    background-color: var(--color-black);
+    padding: 1em;
 }
 
 #welcome-banner-content-title,
 #welcome-banner-content-tagline {
     background: var(--color-black);
     line-height: 1em;
-}
-
-#welcome-banner-content-links {
-    margin-top: 5em;
-}
-
-#welcome-banner-content-links a {
-    border-radius: 2em;
-    background-color: var(--color-black);
-    color: var(--color-primary);
-    padding: 0.6em 1.3em;
-    width: fit-content;
-    font-size: 1.45em;
-    font-weight: 600;
-    display: block;
-    text-align: center;
-}
-
-#welcome-banner-content-links a:hover {
-    text-decoration: none;
-    opacity: 0.95;
+    letter-spacing: 0.05em;
 }
 
 #welcome-banner-content hr {
-    border-top: 1rem solid white;
+    border-top: 1rem solid var(--color-primary);
     width: 100%;
-    margin: 3rem 0;
+    margin: 0.5rem 0 1.5rem 0;
 }
 
 #welcome-banner-proceed {
@@ -461,11 +444,72 @@ main section {
     padding-top: 0.1em;
     cursor: pointer;
     line-height: 80px;
+    background: var(--color-black);
 }
 
 #welcome-banner-proceed:hover {
-    background-color: white;
     color: var(--color-primary);
+}
+
+/* ---------- Photographs ---------- */
+
+#photograph-list-search-form {
+    margin: 2em auto;
+}
+
+#photograph-list-search-input {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+}
+
+#photograph-list-search-button {
+    color: var(--color-black);
+    background: var(--color-primary);
+    width: 3em;
+}
+
+#photograph-list-items {
+    margin: 2em auto;
+    width: fit-content;
+}
+
+.photograph-list-items-item {
+    display: inline-block;
+    width: 22rem;
+    height: 22rem;
+    border: 2px solid #303030;
+    vertical-align: top;
+    margin: 0.5em 0.4em;
+    background-size: cover;
+    background-position: center;
+}
+
+.photograph-list-items-item:hover {
+    text-decoration: none;
+    border: 2px solid var(--color-primary);
+}
+
+.photograph-list-items-item-text {
+    background: var(--color-black);
+    color: var(--color-primary);
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0.3em;
+}
+
+#photograph-detail-image {
+    display: block;
+    text-align: center;
+}
+
+#photograph-detail-image img {
+    width: 100%;
+}
+
+#photograph-detail-description {
+    display: block;
+    margin: 3em 0;
 }
 
 /* ---------- Pages ---------- */
@@ -558,6 +602,47 @@ footer a:hover {
     color: var(--color-primary);
     opacity: 1;
     text-decoration: underline;
+}
+
+/* ---------- Translation / Languages / i18n ---------- */
+
+#language-show {
+    z-index: 1000;
+    position: fixed;
+    bottom: 1.1em;
+    left: 0;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    font-size: 2.5em;
+    border-radius: 0 100% 100% 0;
+    background: #272727;
+    cursor: pointer;
+    padding-top: 0.5em;
+    user-select: none;
+}
+
+#language-show:hover {
+ background: var(--color-primary);
+}
+
+#language-popup {
+    position: fixed;
+    bottom: 2em;
+    left: -10em;
+    width: 10em;
+    background: #272727;
+    color: white;
+    padding: 1em 1em 0.2em 1em;
+    z-index: 1000;
+}
+
+#lang-options li {
+    padding-bottom: 0.8em;
+}
+
+#lang-options a:hover {
+    text-decoration: none;
 }
 
 /* ---------- Error Pages ---------- */

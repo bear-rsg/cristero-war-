@@ -21,7 +21,7 @@
     }
 
     .nav-link.active {
-        border-bottom: 0.3em solid white;
+        border-bottom: 0.3em solid #f36112;
     }
 
     #nav-search {
@@ -43,16 +43,15 @@
     }
 
     #welcome-banner-content {
-        margin: 1vh 5vw;
+        margin: 7vh 5vw;
     }
 
     #welcome-banner-content-title {
-        font-size: 4.7em;
+        font-size: 4em;
     }
 
     #welcome-banner-content-tagline {
-        font-size: 2.5em;
-        letter-spacing: 0.2em;
+        font-size: 2.4em;
     }
 
 }
