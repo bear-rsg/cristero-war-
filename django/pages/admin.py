@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.db.models import ManyToManyField, ForeignKey
-from django.utils.text import slugify
 from django.utils import timezone
 from . import models
 

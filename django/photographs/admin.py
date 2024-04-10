@@ -43,7 +43,6 @@ class PhotographUserContributionStackedInline(admin.StackedInline):
     readonly_fields = ('meta_created_datetime', 'meta_lastupdated_datetime')
 
 
-
 @admin.register(models.Photograph)
 class PhotographAdminView(admin.ModelAdmin):
     """
