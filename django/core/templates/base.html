@@ -112,7 +112,7 @@
 
         <!-- Language -->
         <div id="language-show">
-            {% if LANGUAGE_CODE == 'es' %}🇪🇸{% elif LANGUAGE_CODE == 'en' %}🇬🇧{% endif%}
+            {% if LANGUAGE_CODE == 'es' %}🇲🇽{% elif LANGUAGE_CODE == 'en' %}🇬🇧{% endif%}
         </div>
         <div id="language-popup">
             <ul id="lang-options" class="navbar-nav">
@@ -120,7 +120,7 @@
                 {% for lang_code, lang_name in languages %}
                     <li>
                         <a href="{% language_url lang_code request.get_full_path %}">
-                            {% if lang_code == 'es' %}🇪🇸{% elif lang_code == 'en' %}🇬🇧{% endif%}
+                            {% if lang_code == 'es' %}🇲🇽{% elif lang_code == 'en' %}🇬🇧{% endif%}
                             {{ lang_name }}
                         </a>
                     </li>
