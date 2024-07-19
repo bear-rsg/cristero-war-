@@ -13,6 +13,7 @@ class Photograph(models.Model):
     related_name = 'photographs'
 
     image = models.ImageField(upload_to='photographs', blank=True, null=True)
+    image_name = models.CharField(max_length=255, blank=True, null=True, help_text="A brief name/title for the image")
     description_es = RichTextUploadingField(blank=True, null=True, verbose_name='Description (Spanish)')
     description_en = RichTextUploadingField(blank=True, null=True, verbose_name='Description (English)')
     acknowledgements = models.TextField(blank=True, null=True)
@@ -29,15 +30,11 @@ class Photograph(models.Model):
     def admin_url(self):
         return reverse('admin:photographs_photograph_change', args=[self.id])
 
-    @property
-    def image_name(self):
-        return str(self.image.name).split('/')[-1].split('.')[0]
-
     def __str__(self):
-        return f'Photograph #{self.id}: {self.image_name}'
+        return self.image_name if self.image_name else f'Photograph #{self.id}'
 
     def get_absolute_url(self):
-        return reverse('photographs:detail', args=[self.meta_slug])
+        return reverse('photographs:detail', args=[self.id])
 
 
 class PhotographUserContribution(models.Model):
