@@ -5,6 +5,20 @@ from django.utils import timezone
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
+class PhotographGroup(models.Model):
+    """
+    A group of related photographs
+    """
+
+    related_name = 'photographgroups'
+
+    name = models.CharField(max_length=255)
+    notes = models.TextField(blank=True, null=True, help_text='Notes are for admins only and will not be visible on the public website')
+
+    def __str__(self):
+        return self.name
+
+
 class Photograph(models.Model):
     """
     A photograph and related data
@@ -14,9 +28,11 @@ class Photograph(models.Model):
 
     image = models.ImageField(upload_to='photographs', blank=True, null=True)
     image_name = models.CharField(max_length=255, blank=True, null=True, help_text="A brief name/title for the image")
+    group = models.ForeignKey('PhotographGroup', on_delete=models.PROTECT, blank=True, null=True,related_name=related_name)
     description_es = RichTextUploadingField(blank=True, null=True, verbose_name='Description (Spanish)')
     description_en = RichTextUploadingField(blank=True, null=True, verbose_name='Description (English)')
     acknowledgements = models.TextField(blank=True, null=True)
+    order = models.IntegerField(blank=True, null=True, help_text='Photographs are ordered by their group, then by this order field (in ascending order), and then by date created.')
     published = models.BooleanField(default=False, help_text='Check this box to include this photograph on the public website')
     notes = models.TextField(blank=True, null=True, help_text='Notes are for admins only and will not be visible on the public website')
 
@@ -31,10 +47,13 @@ class Photograph(models.Model):
         return reverse('admin:photographs_photograph_change', args=[self.id])
 
     def __str__(self):
-        return self.image_name if self.image_name else f'Photograph #{self.id}'
+        return f'#{self.id}'
 
     def get_absolute_url(self):
         return reverse('photographs:detail', args=[self.id])
+
+    class Meta:
+        ordering = ('group', 'order', 'meta_created_datetime')
 
 
 class PhotographUserContribution(models.Model):
