@@ -6,7 +6,13 @@
 
 <!-- Photograph -->
 <div id="photograph-detail" class="container">
-    <h2>{{ photograph }}</h2>
+    <h2>
+        {% if photograph.image_name %}
+            {{ photograph.image_name }}
+        {% else %}
+            {% translate 'Photograph' %} #{{ photograph.id }}
+        {% endif %}
+    </h2>
     <div id="photograph-detail-description">
         {% if LANGUAGE_CODE == 'es' %}
             {{ photograph.description_es | safe }}
