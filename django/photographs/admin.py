@@ -43,6 +43,15 @@ class PhotographUserContributionStackedInline(admin.StackedInline):
     readonly_fields = ('meta_created_datetime', 'meta_lastupdated_datetime')
 
 
+@admin.register(models.PhotographGroup)
+class PhotographGroupAdminView(admin.ModelAdmin):
+    """
+    Customise the admin interface for PhotographGroup model
+    """
+
+    list_display = ('id', 'name', 'notes')
+
+
 @admin.register(models.Photograph)
 class PhotographAdminView(admin.ModelAdmin):
     """
@@ -51,6 +60,8 @@ class PhotographAdminView(admin.ModelAdmin):
 
     list_display = ('id',
                     'image',
+                    'group',
+                    'order',
                     'published',
                     'meta_created_by',
                     'meta_created_datetime',
@@ -69,7 +80,7 @@ class PhotographAdminView(admin.ModelAdmin):
                        'meta_lastupdated_datetime')
     actions = (publish, unpublish)
     inlines = (PhotographUserContributionStackedInline,)
-    list_per_page = 100
+    list_per_page = 50
 
     def save_model(self, request, obj, form, change):
         # Meta: created (if not yet set) or last updated by (if created already set)
