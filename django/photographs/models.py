@@ -28,7 +28,7 @@ class Photograph(models.Model):
 
     image = models.ImageField(upload_to='photographs', blank=True, null=True)
     image_name = models.CharField(max_length=255, blank=True, null=True, help_text="A brief name/title for the image")
-    group = models.ForeignKey('PhotographGroup', on_delete=models.PROTECT, blank=True, null=True,related_name=related_name)
+    group = models.ForeignKey('PhotographGroup', on_delete=models.PROTECT, blank=True, null=True, related_name=related_name)
     description_es = RichTextUploadingField(blank=True, null=True, verbose_name='Description (Spanish)')
     description_en = RichTextUploadingField(blank=True, null=True, verbose_name='Description (English)')
     acknowledgements = models.TextField(blank=True, null=True)

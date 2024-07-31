@@ -51,6 +51,7 @@ class PhotographGroupAdminView(admin.ModelAdmin):
 
     list_display = ('id', 'name', 'notes')
 
+
 @admin.register(models.Photograph)
 class PhotographAdminView(admin.ModelAdmin):
     """
