@@ -60,6 +60,7 @@ class PhotographAdminView(admin.ModelAdmin):
 
     list_display = ('id',
                     'image',
+                    'image_name',
                     'group',
                     'order',
                     'published',
@@ -71,6 +72,7 @@ class PhotographAdminView(admin.ModelAdmin):
                            'meta_lastupdated_by',)
     list_filter = ('published',)
     search_fields = ('image',
+                     'image_name',
                      'description_es',
                      'description_en',
                      'notes')
