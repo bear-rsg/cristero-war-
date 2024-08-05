@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-28 08:24+0100\n"
+"POT-Creation-Date: 2024-08-05 10:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,37 +31,41 @@ msgid "ProjectTitle"
 msgstr "Enrique Aguilar Ugarte en Encarnación de Díaz"
 
 #: core/templates/base.html:61
-msgid "Photographs"
+msgid "Welcome"
 msgstr ""
 
 #: core/templates/base.html:67
-msgid "About"
+msgid "Photographs"
 msgstr ""
 
 #: core/templates/base.html:73
-msgid "Updates"
+msgid "About"
 msgstr ""
 
 #: core/templates/base.html:79
+msgid "Updates"
+msgstr ""
+
+#: core/templates/base.html:85
 msgid "Get Involved"
 msgstr ""
 
-#: core/templates/base.html:101
+#: core/templates/base.html:107
 msgid "Privacy"
 msgstr ""
 
-#: core/templates/base.html:102
+#: core/templates/base.html:108
 msgid "Legal"
 msgstr ""
 
-#: core/templates/base.html:103
+#: core/templates/base.html:109
 msgid "Freedom of Information"
 msgstr ""
 
-#: core/templates/base.html:104
+#: core/templates/base.html:110
 msgid "Cookies"
 msgstr ""
 
-#: core/templates/base.html:105
+#: core/templates/base.html:111
 msgid "Accessibility"
 msgstr ""

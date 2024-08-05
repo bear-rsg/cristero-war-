@@ -25,15 +25,17 @@
     <!-- List Items -->
     <div id="photograph-list-items">
         {% for photograph in photograph_list %}
-            <a href="{% url 'photographs:detail' photograph.id %}" class="photograph-list-items-item" style="background-image: url({{ photograph.image.url }});">
-                <div class="photograph-list-items-item-text">
-                    {% if photograph.image_name %}
-                        {{ photograph.image_name }}
-                    {% else %}
-                        {% translate 'Photograph' %} #{{ photograph.id }}
-                    {% endif %}
-                </div>
-            </a>
+            {% if photograph.image %}
+                <a href="{% url 'photographs:detail' photograph.id %}" class="photograph-list-items-item" style="background-image: url({{ photograph.image.url }});">
+                    <div class="photograph-list-items-item-text">
+                        {% if photograph.image_name %}
+                            {{ photograph.image_name }}
+                        {% else %}
+                            {% translate 'Photograph' %} #{{ photograph.id }}
+                        {% endif %}
+                    </div>
+                </a>
+            {% endif %}
         {% endfor %}
     </div>
 </div>
