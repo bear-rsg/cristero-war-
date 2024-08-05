@@ -17,6 +17,7 @@ class PhotographListView(ListView):
         if search != '':
             queryset = queryset.filter(
                 Q(image__icontains=search) |
+                Q(image_name__icontains=search) |
                 Q(description_es__icontains=search) |
                 Q(description_en__icontains=search) |
                 Q(acknowledgements__icontains=search) |
