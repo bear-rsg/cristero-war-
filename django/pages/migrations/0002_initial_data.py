@@ -39,17 +39,17 @@ def create_pages(apps, schema_editor):
         published=True
     )
 
-    # Updates
+    # Resources
     content = """
 
-<h2>Updates</h2>
+<h2>Resources</h2>
 <p>
     Here's some content
 </p>
 
 """.strip()
     models.Page.objects.create(
-        name='Updates',
+        name='Resources',
         content_es=content,
         content_en=content,
         published=True
