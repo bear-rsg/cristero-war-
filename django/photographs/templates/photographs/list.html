@@ -28,8 +28,10 @@
             {% if photograph.image %}
                 <a href="{% url 'photographs:detail' photograph.id %}" class="photograph-list-items-item" style="background-image: url({{ photograph.image.url }});">
                     <div class="photograph-list-items-item-text">
-                        {% if photograph.image_name %}
-                            {{ photograph.image_name }}
+                        {% if LANGUAGE_CODE == 'es' and photograph.image_name_es %}
+                            {{ photograph.image_name_es | safe }}
+                        {% elif LANGUAGE_CODE == 'en' and photograph.image_name_en %}
+                            {{ photograph.image_name_en | safe }}
                         {% else %}
                             {% translate 'Photograph' %} #{{ photograph.id }}
                         {% endif %}

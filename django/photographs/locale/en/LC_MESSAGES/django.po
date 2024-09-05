@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-05 10:44+0100\n"
+"POT-Creation-Date: 2024-09-05 08:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: photographs/templates/photographs/detail.html:13
-#: photographs/templates/photographs/list.html:34
+#: photographs/templates/photographs/detail.html:15
+#: photographs/templates/photographs/list.html:36
 msgid "Photograph"
 msgstr ""
 
