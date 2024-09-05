@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-05 11:10+0100\n"
+"POT-Creation-Date: 2024-09-05 07:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,29 +39,29 @@ msgid "About"
 msgstr ""
 
 #: core/templates/base.html:73
-msgid "Updates"
+msgid "Resources"
 msgstr ""
 
 #: core/templates/base.html:79
 msgid "Get Involved"
 msgstr ""
 
-#: core/templates/base.html:101
+#: core/templates/base.html:103
 msgid "Privacy"
 msgstr ""
 
-#: core/templates/base.html:102
+#: core/templates/base.html:104
 msgid "Legal"
 msgstr ""
 
-#: core/templates/base.html:103
+#: core/templates/base.html:105
 msgid "Freedom of Information"
 msgstr ""
 
-#: core/templates/base.html:104
+#: core/templates/base.html:106
 msgid "Cookies"
 msgstr ""
 
-#: core/templates/base.html:105
+#: core/templates/base.html:107
 msgid "Accessibility"
 msgstr ""
