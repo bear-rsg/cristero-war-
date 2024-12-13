@@ -477,25 +477,33 @@ main section {
 .photograph-list-items-item {
     display: inline-block;
     width: 22rem;
-    height: 22rem;
-    border: 2px solid #303030;
+    height: 27rem;
+    border: 0.2em solid #303030;
     vertical-align: top;
-    margin: 0.5em 0.4em;
+    margin: 0.4em;
     background-size: cover;
     background-position: center;
+    border-radius: 1em;
+    overflow: hidden;
+    position: relative;
 }
 
 .photograph-list-items-item:hover {
     text-decoration: none;
-    border: 2px solid var(--color-primary);
+    border: 0.2em solid var(--color-primary);
 }
 
 .photograph-list-items-item-text {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     background: var(--color-black);
-    color: var(--color-primary);
-    font-size: 1.2em;
-    font-weight: bold;
+    color: #CCC;
+    font-size: 1em;
+    text-align: center;
+    font-weight: 400;
     padding: 0.3em;
+    display: none;
 }
 
 #photograph-detail-image {
